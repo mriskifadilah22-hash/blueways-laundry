@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueWays Laundry</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loader">
+    <h2>Loading...</h2>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>LAUNDRY KILAT ⚡ 1 HARI JADI!</h1>
+    <p>🔥 Gratis Antar Jemput • 💯 Wangi Tahan Lama</p>
+    <a href="https://wa.me/6283152580098?text=Halo%20saya%20mau%20order%20laundry🔥" target="_blank">
+        ORDER SEKARANG 🚀
+    </a>
+</div>
+
+<div class="container">
+
+    <div class="card reveal">
+        <p>LAUNDRY CEPAT, BERSIH, DAN WANGI!</p>
+    </div>
+
+    <div class="card reveal">
+        <h2>Layanan Kami:</h2>
+        <ul>
+            <li>🧺 Cuci Kiloan</li>
+            <li>🔥 Cuci + Setrika</li>
+            <li>⚡ Express 6 Jam Jadi</li>
+        </ul>
+    </div>
+
+    <div class="card reveal">
+        <h2>Harga Laundry</h2>
+
+        <div class="price-list">
+            <div class="price-item">
+                <h3>Cuci Kiloan</h3>
+                <p>Rp 7.000 / kg</p>
+            </div>
+
+            <div class="price-item">
+                <h3>Cuci + Setrika</h3>
+                <p>Rp 10.000 / kg</p>
+            </div>
+
+            <div class="price-item">
+                <h3>Express</h3>
+                <p>Rp 15.000 / kg</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal promo">
+        <h2>⚠️ PROMO HARI INI!</h2>
+        <p>Diskon 30% untuk pelanggan baru!</p>
+        <a href="https://wa.me/6283152580098?text=Saya%20mau%20klaim%20promo🔥" target="_blank">
+            KLAIM SEKARANG 🔥
+        </a>
+    </div>
+
+    <div class="card reveal">
+        <h2>Testimoni</h2>
+        <p>⭐⭐⭐⭐⭐ “Wanginya tahan lama!”</p>
+        <p>⭐⭐⭐⭐⭐ “Cepat dan bersih!”</p>
+    </div>
+
+</div>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/6283152580098?text=Halo%20saya%20tertarik%20laundry" class="wa-float" target="_blank">
+    💬
+</a>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 BlueWays Laundry</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+// loader
+window.addEventListener("load", function() {
+    document.getElementById("loader").style.display = "none";
+});
+
+// scroll animation
+window.addEventListener("scroll", function() {
+    let reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach(function(el) {
+        let windowHeight = window.innerHeight;
+        let elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
