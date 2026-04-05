@@ -10,7 +10,28 @@
     <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
+<!-- HERO -->
+<div class="slider">
 
+    <div class="slide active">
+        <h1>LAUNDRY KILAT ⚡ 1 HARI JADI!</h1>
+        <p>🔥 Gratis Antar Jemput • 💯 Wangi Tahan Lama</p>
+        <a href="#">ORDER SEKARANG 🚀</a>
+    </div>
+
+    <div class="slide">
+        <h1>PROMO SPESIAL HARI INI!</h1>
+        <p>Diskon 30% untuk pelanggan baru 🔥</p>
+        <a href="#">KLAIM SEKARANG</a>
+    </div>
+
+    <div class="slide">
+        <h1>EXPRESS 6 JAM ⚡</h1>
+        <p>Cepat, bersih, langsung siap pakai</p>
+        <a href="#">ORDER SEKARANG</a>
+    </div>
+
+</div>
 <body>
 
 <!-- LOADING -->
@@ -18,14 +39,6 @@
     <h2>Loading...</h2>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>LAUNDRY KILAT ⚡ 1 HARI JADI!</h1>
-    <p>🔥 Gratis Antar Jemput • 💯 Wangi Tahan Lama</p>
-    <a href="https://wa.me/6283152580098?text=Halo%20saya%20mau%20order%20laundry🔥" target="_blank">
-        ORDER SEKARANG 🚀
-    </a>
-</div>
 
 <div class="container">
 
@@ -47,29 +60,60 @@
 
         <div class="price-list">
             <div class="price-item">
-                <h3>Cuci Kiloan</h3>
-                <p>Rp 7.000 / kg</p>
+                <h3>Sprei Tipis besar (set)</h3>
+                <p>Rp 13.000 / kg</p>
             </div>
 
             <div class="price-item">
-                <h3>Cuci + Setrika</h3>
+                <h3>Sprei Tipis sedang (set)</h3>
                 <p>Rp 10.000 / kg</p>
             </div>
 
             <div class="price-item">
-                <h3>Express</h3>
+                <h3>Sprei Tipis kecil (set)</h3>
+                <p>Rp 8.000 / kg</p>
+            </div>
+            <div class="price-item">
+                <h3>Sprei Tebal besar (set)</h3>
+                <p>Rp 20.000 / kg</p>
+            </div>
+            <div class="price-item">
+                <h3>Sprei Tebal sedang (set)</h3>
                 <p>Rp 15.000 / kg</p>
+            </div>
+            <div class="price-item">
+                <h3>Sprei Tebal kecil (set)</h3>
+                <p>Rp 13.000 / kg</p>
+            </div>
+            <div class="price-item">
+                <h3>Selimut/Badcover besar</h3>
+                <p>Rp 35.000 / kg</p>
+            </div>
+            <div class="price-item">
+                <h3>Selimut/Badcover sedang</h3>
+                <p>Rp 25.000 / kg</p>
+            </div>
+            <div class="price-item">
+                <h3>Selimut/Badcover kecil</h3>
+                <p>Rp 20.000 / kg</p>
             </div>
         </div>
     </div>
 
     <div class="card reveal promo">
+        <div class="countdown-box">
+    ⏳ Promo berakhir dalam:
+    <span id="timer">10:00</span>
+</div>
         <h2>⚠️ PROMO HARI INI!</h2>
         <p>Diskon 30% untuk pelanggan baru!</p>
         <a href="https://wa.me/6283152580098?text=Saya%20mau%20klaim%20promo🔥" target="_blank">
             KLAIM SEKARANG 🔥
         </a>
     </div>
+    <p style="text-align:center; color:red;">
+⚠️ Slot hari ini hampir penuh!
+</p>
 
     <div class="card reveal">
         <h2>Testimoni</h2>
@@ -78,7 +122,22 @@
     </div>
 
 </div>
-
+<div class="card reveal">
+    <h2>Kenapa Pilih Kami?</h2>
+    <ul>
+        <li>✅ 1000+ pelanggan puas</li>
+        <li>✅ Wangi tahan lama</li>
+        <li>✅ Bisa express cepat</li>
+        <li>✅ Gratis antar jemput</li>
+    </ul>
+</div>
+<div class="cta-box">
+    <h2>Siap Laundry Hari Ini?</h2>
+    <p>Klik sekarang dan kami jemput ke rumah kamu 🚚</p>
+    <a href="https://wa.me/6283152580098?text=Halo%20saya%20mau%20order%20laundry🔥">
+        ORDER SEKARANG 🔥
+    </a>
+</div>
 <!-- FLOAT WA -->
 <a href="https://wa.me/6283152580098?text=Halo%20saya%20tertarik%20laundry" class="wa-float" target="_blank">
     💬
@@ -109,7 +168,68 @@ window.addEventListener("scroll", function() {
         }
     });
 });
-</script>
 
+</script>
+<div id="popup" class="popup"></div>
+<script>
+const names = ["Andi", "Budi", "Siti", "Rina", "Dewi", "Agus", "Fajar"];
+const cities = ["Medan", "Jakarta", "Bandung", "Surabaya", "Bekasi"];
+
+function showPopup() {
+    let name = names[Math.floor(Math.random() * names.length)];
+    let city = cities[Math.floor(Math.random() * cities.length)];
+
+    let popup = document.getElementById("popup");
+    popup.innerHTML = "🔥 " + name + " dari " + city + " baru order Express 6 Jam!";
+
+    popup.classList.add("show");
+
+    setTimeout(() => {
+        popup.classList.remove("show");
+    }, 3000);
+}
+
+setInterval(showPopup, 5000);
+popup.innerHTML = "🔥 " + name + " baru order Express 6 Jam!";
+popup.innerHTML = "🔥 " + name + " baru order kiloan!";
+setInterval(showPopup, Math.random() * 4000 + 3000);
+
+
+</script>
+<script>
+let time = 600; // 10 menit
+
+function updateTimer() {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    document.getElementById("timer").innerText = minutes + ":" + seconds;
+
+    if (time > 0) {
+        time--;
+    }
+}
+
+setInterval(updateTimer, 1000);
+
+</script>
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+
+    index++;
+    if (index >= slides.length) {
+        index = 0;
+    }
+}
+
+setInterval(showSlide, 3000);
+</script>
 </body>
 </html>
